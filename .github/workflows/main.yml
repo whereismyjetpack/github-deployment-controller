@@ -43,5 +43,4 @@ jobs:
         with:
           tags: |
             "ghcr.io/whereismyjetpack/github-deployment-controller:latest"
-            "ghcr.io/whereismyjetpack/github-deployment-controller:${{ github.ref }}"
           push: true
