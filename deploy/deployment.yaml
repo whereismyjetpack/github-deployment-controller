@@ -20,7 +20,7 @@ spec:
     spec:
       serviceAccountName: github-deployment-controller
       containers:
-      - image: whereismyjetpack/github-deployment-controller:latest
+      - image: ghcr.io/whereismyjetpack/github-deployment-controller
         imagePullPolicy: Always
         name: github-deployment-controller
         env:
