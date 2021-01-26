@@ -56,7 +56,7 @@ class Deployments:
         deployment_id = resp.json().get("id")
 
         if spec.get("deployment"):
-            timeout = spec.get("deploymentTimout", 60)
+            timeout = spec.get("deploymentTimout", 120)
             logging.info(
                 f"waiting {timeout} seconds for deployment {spec['deployment']} in the {meta['namespace']} namespace"
             )

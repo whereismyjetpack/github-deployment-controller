@@ -5,7 +5,7 @@ import time
 import logging
 
 
-def wait_for_deployment_complete(deployment_name, namespace, timeout=60):
+def wait_for_deployment_complete(deployment_name, namespace, timeout=120):
 
     try:
         config.load_incluster_config()

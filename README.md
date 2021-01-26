@@ -45,5 +45,5 @@ This spec will create a Github Deployment, with the environment name of 'qa' in 
 | logUrl            | None    | URL where the Deployment logs can be found (i.e CI build)                      | No        |
 | description       | None    | A description for the deployment                                               | No        |
 | deployment        | None    | The deployment name in the same namespace as GithubDeployment to watch         | No        |
-| deploymentTimeout | 60      | Time in seconds to wait for rollout. Timeout will send failure state to Github | No        |
+| deploymentTimeout | 120     | Time in seconds to wait for rollout. Timeout will send failure state to Github | No        |
 
