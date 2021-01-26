@@ -9,10 +9,10 @@ from deployments import Deployments
 @kopf.on.update("jetpack.io", "v1alpha1", "githubdeployments")
 def create_fn(body, **kwargs):
     d = Deployments()
-    deployment_id = body.get("status", {}).get("create_fn", {}).get("deployment_id")
-    if deployment_id:
-        logging.info(f"found existing deployment, inactivating it before proceeding")
-        d.update(body, deployment_id, "inactive")
+    # deployment_id = body.get("status", {}).get("create_fn", {}).get("deployment_id")
+    # if deployment_id:
+    #     logging.info(f"found existing deployment, inactivating it before proceeding")
+    #     d.update(body, deployment_id, "inactive")
 
     deployment_id = d.create(body)
 
