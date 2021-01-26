@@ -41,5 +41,7 @@ jobs:
         # uses: docker/build-push-action@4a531fa5a603bab87dfa56578bd82b28508c9547
         uses: docker/build-push-action@v2.2.2
         with:
-          tags: "ghcr.io/whereismyjetpack/github-deployment-controller:latest, ${{ github.ref }}"
+          tags: |
+            "ghcr.io/whereismyjetpack/github-deployment-controller:latest"
+            "ghcr.io/whereismyjetpack/github-deployment-controller:${{ github.ref }}"
           push: true
