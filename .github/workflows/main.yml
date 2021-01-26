@@ -30,7 +30,7 @@ jobs:
           # Server address of Docker registry. If not set then will default to Docker Hub
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
+          password: ${{ secrets.GH_PAT }}
           
       - uses: actions/checkout@v2
       - name: Build and push Docker images
