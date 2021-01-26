@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-deployment-controller
+  namespace: github-deployment-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: github-deployment-controller
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name: github-deployment-controller
+    spec:
+      serviceAccountName: github-deployment-controller
+      containers:
+      - image: whereismyjetpack/github-deployment-controller:latest
+        imagePullPolicy: Always
+        name: github-deployment-controller
+        env:
+          - name: GITHUB_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: github-deployment-controller
+                key: GITHUB_TOKEN
+
+
+

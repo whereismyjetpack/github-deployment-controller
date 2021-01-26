@@ -1,0 +1,53 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: githubdeployments.jetpack.io
+spec:
+  scope: Namespaced
+  group: jetpack.io
+  names:
+    kind: GithubDeployment
+    plural: githubdeployments
+    singular: githubdeployoment
+    shortNames:
+      - ghdep
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              x-kubernetes-preserve-unknown-fields: true
+              properties:
+                environment:
+                  type: string
+                  description: "The Github Environment this deployment belongs to"
+                repo:
+                  type: string
+                  description: "The repo in org/reponame format"
+                environmentUrl:
+                  type: string
+                  description: "The URL used to reach this deployment"
+                logUrl:
+                  type: string
+                  description: "The URL that leads back to the log for this deployment. i.e CI URL"
+                description:
+                  type: string
+                  description: "Description for the deployment"
+                ref:
+                  type: string
+                  description: "The commit, branch, or tag reference for this deployment"
+                deployment:
+                  type: string
+                  description: "The name of the deployment to watch before sending a successful message. If omitted, we send a success message straight away"
+                deploymentTimout:
+                  type: integer
+                  description: "The time in seconds to wait for a deployment to rollout"
+            status:
+              type: object
+              x-kubernetes-preserve-unknown-fields: true

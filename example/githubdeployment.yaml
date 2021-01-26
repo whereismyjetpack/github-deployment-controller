@@ -1,0 +1,10 @@
+---
+apiVersion: jetpack.io/v1alpha1
+kind: GithubDeployment
+metadata:
+  name: utopia-djb44
+spec:
+  environment: 'qa'
+  repo: 'whereismyjetpack/banker'
+  environmentUrl: "https://github.com/whereismyjetpack"
+  ref: "main"
