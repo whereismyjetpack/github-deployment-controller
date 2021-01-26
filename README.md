@@ -9,7 +9,7 @@ kubectl create ns github-deployment-controller
 ```
 create a secret and give it a GITHUB_TOKEN value 
 ```
-kubectl -n github-deployment-controller create secret generic github-deployment-operator --from-literal=GITHUB_TOKEN=asdfjlasdfjalf
+kubectl -n github-deployment-controller create secret generic github-deployment-controller --from-literal=GITHUB_TOKEN=asdfjlasdfjalf
 ```
 
 Review, and then apply manifests
