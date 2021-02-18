@@ -30,7 +30,7 @@ spec:
                 repo:
                   type: string
                   description: "The repo in org/reponame format"
-                environmentUrl:
+                environment_url:
                   type: string
                   description: "The URL used to reach this deployment"
                 logUrl:

@@ -6,5 +6,5 @@ metadata:
 spec:
   environment: 'qa'
   repo: 'whereismyjetpack/banker'
-  environmentUrl: "https://github.com/whereismyjetpack"
+  environment_url: "https://github.com/whereismyjetpack"
   ref: "main"

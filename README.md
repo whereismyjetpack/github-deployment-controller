@@ -29,7 +29,7 @@ metadata:
 spec:
   environment: 'qa'
   repo: 'whereismyjetpack/banker'
-  environmentUrl: "https://github.com/whereismyjetpack"
+  environment_url: "https://github.com/whereismyjetpack"
   ref: "main"
 ```
 
@@ -41,8 +41,8 @@ This spec will create a Github Deployment, with the environment name of 'qa' in 
 | environment       | n/a     | Github Environment                                                             | Yes       |
 | repo              | n/a     | Github Repository in the org/repo format                                       | Yes       |
 | ref               | n/a     | Github commit, branch, tag ref                                                 | Yes       |
-| environmentUrl    | None    | URL where the Deployment can be reached                                        | No        |
-| logUrl            | None    | URL where the Deployment logs can be found (i.e CI build)                      | No        |
+| environment_url    | None    | URL where the Deployment can be reached                                        | No        |
+| log_url            | None    | URL where the Deployment logs can be found (i.e CI build)                      | No        |
 | description       | None    | A description for the deployment                                               | No        |
 | deployment        | None    | The deployment name in the same namespace as GithubDeployment to watch         | No        |
 | deploymentTimeout | 120     | Time in seconds to wait for rollout. Timeout will send failure state to Github | No        |

@@ -13,7 +13,7 @@ class Deployments:
             "accept": "application/vnd.github.ant-man-preview+json",
         }
         self.uri = "https://api.github.com"
-        self.status_params = ["environmentURL", "logURL", "description"]
+        self.status_params = ["environment_url", "log_url", "description"]
 
     def update(self, body, deployment_id, state):
         spec = body["spec"]
