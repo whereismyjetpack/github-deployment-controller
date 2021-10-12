@@ -24,10 +24,12 @@ RUN apt-get update && apt-get install -y \
   
 
 RUN pip install poetry
-RUN poetry config virtualenvs.create false
 COPY --chown=app pyproject.toml poetry.lock /app/
-RUN poetry install
 USER app
+RUN poetry config virtualenvs.create false
+ENV PIP_USER=yes
+ENV PATH=$PATH:/home/app/.local/bin
+RUN poetry install
 COPY --chown=app . /app
 
-CMD ["kopf", "run", "lib/run.py"]
+CMD ["kopf", "run", "-A",  "lib/run.py", "--log-format=json"]
