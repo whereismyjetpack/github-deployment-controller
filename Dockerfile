@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
   libgnutls30=3.6.7-4+deb10u7 \
   libhogweed4=3.4.1-1+deb10u1 \ 
   liblz4-1=1.8.3-1+deb10u1 \ 
+  libapt-pkg5.0=1.8.2.2 \
   libnettle6=3.4.1-1+deb10u1 \ 
   libp11-kit0 \ 
   libsqlite3-0 \
